@@ -26,6 +26,8 @@ npm i -D typescript
 npx tsc --init
 npm install --save-dev tslint
 npx tslint --init
+// update tsconfig:  "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
+   
  
 ```
 
