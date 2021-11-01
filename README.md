@@ -13,20 +13,12 @@ ONCE means "Object Network Communication Engine" and enables distributed objects
 
 
 # INTERNAL: Initial Setup done with:
-## initial setup
+## genesis
 
 ```
 npm init
-```
-
-```
-npm i -D express
-npm i -D serve-index
-
-npm i -D typescript
+npm i -D rollup typescript
 npx tsc --init
-npm install --save-dev tslint
-npx tslint --init
 ```
 
 ## setup debugging & watch
