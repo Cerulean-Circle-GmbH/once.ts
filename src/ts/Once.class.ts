@@ -26,7 +26,7 @@
 
 
 
-import { OnceServer } from "./OnceServer.js";
+
 declare global {
   //   interface Window {
   //     ONCE: Once
@@ -121,7 +121,7 @@ export class Once {
         await this.initClientsideOnce();
         break;
       case ONCE_MODE.NODE_SERVER:
-       OnceServer.start()
+       (await import ("./OnceServer.js")).default.start()
         break;
     }
     logger.group("word");

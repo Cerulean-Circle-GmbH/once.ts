@@ -6,7 +6,7 @@ import serveIndex from "serve-index";
 import path from "path"
 
 
-export class OnceServer {
+export default class OnceServer {
   private servers: any[] = [];
   private dynamicPort: number | undefined;
   static start() {
