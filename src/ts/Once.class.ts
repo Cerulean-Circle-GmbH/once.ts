@@ -24,11 +24,13 @@
       }
  */
 
+
 import http from "http";
 import url from "url";
 import express from "express";
 import fs from "fs";
-
+import serveIndex from "serve-index";
+import path from "path"
 declare global {
   //   interface Window {
   //     ONCE: Once
@@ -139,10 +141,13 @@ export class Once {
     //     logger.error(err, err.stack);
     // })
 
-    // Once.express.serveIndex = require('serve-index');
 
     ONCE.express = express();
-    ONCE.express.get("/", ONCE.handleHTTPRequest);
+  ONCE.express.get("/", ONCE.handleHTTPRequest);
+    ONCE.express.serveIndex = serveIndex;
+    ONCE.express.use("/", ONCE.express.serveIndex("/Users/Shared/dev/Workspaces/2cuGitHub/once.ts/"));
+    ONCE.express.use("/", express.static("/Users/Shared/dev/Workspaces/2cuGitHub/once.ts/"));
+
 
     ONCE.servers = [];
     const httpsServer = null;
@@ -194,11 +199,11 @@ export class Once {
   async handleHTTPRequest(request: any, response: any) {
     // const url = require("url");
 
-    const path = url.parse(request.url).pathname;
+    const localPath = url.parse(request.url).pathname;
     logger.log(
       "Received " + request.method + " to:",
       request.headers.host,
-      path,
+      localPath,
       "from",
       request.connection.remoteAddress
     );
@@ -215,13 +220,13 @@ export class Once {
 
     switch (request.method) {
       case "GET":
-        switch (path) {
+        switch (localPath) {
           case "/":
             ONCE.renderHTML("src/html/Once.html", "text/html", response);
             break;
           // case '/test':
-          //     response.redirect(ONCE.path + '/test/html/Once.mochaTest.html');
-          //     //ONCE.renderHTML(ONCE.basePath + '/test/html/Once.mochaTest.html', 'text/html', response);
+          //     response.redirect(ONCE.localPath + '/test/html/Once.mochaTest.html');
+          //     //ONCE.renderHTML(ONCE.baselocalPath + '/test/html/Once.mochaTest.html', 'text/html', response);
           //     break;
           // case "/once/env":
           //     response.writeHead(200, {
@@ -238,7 +243,7 @@ export class Once {
           //     response.end();
           //     break;
           // case '/favicon.ico':
-          //     ONCE.renderHTML(ONCE.repositoryRootPath + Once.REPOSITORY_ROOT + '/favicon.ico', 'image/x-icon', response);
+          //     ONCE.renderHTML(ONCE.repositoryRootlocalPath + Once.REPOSITORY_ROOT + '/favicon.ico', 'image/x-icon', response);
           //     break;
           // /*
           //                 case Once.REPOSITORY_ROOT:
@@ -247,22 +252,22 @@ export class Once {
           //     */
           default:
             response.writeHead(404);
-            response.write("Route not defined: " + path);
+            response.write("Route not defined: " + localPath);
             response.end();
         }
         break;
     }
   }
 
-  renderHTML(path: any, contentType: any, response: any) {
+  renderHTML(localPath: any, contentType: any, response: any) {
     // const fs = require("fs");
 
-    const thePath = path;
-    fs.readFile(path, null, (error: any, data: any) => {
+    const thelocalPath = localPath;
+    fs.readFile(localPath, null, (error: any, data: any) => {
       if (error) {
         response.writeHead(404);
-        response.write("File " + thePath + " not found!");
-        logger.error("File " + thePath + " not found!");
+        response.write("File " + thelocalPath + " not found!");
+        logger.error("File " + thelocalPath + " not found!");
       } else {
         response.writeHead(200, {
           "Content-Type": contentType,
