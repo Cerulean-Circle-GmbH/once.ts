@@ -55,8 +55,8 @@ export class OnceServer {
     ONCE.express = express();
     ONCE.express.get("/", this.handleHTTPRequest.bind(this));
     ONCE.express.serveIndex = serveIndex;
-    ONCE.express.use("/", ONCE.express.serveIndex("/Users/Shared/dev/Workspaces/2cuGitHub/once.ts/"));
-    ONCE.express.use("/", express.static("/Users/Shared/dev/Workspaces/2cuGitHub/once.ts/"));
+    ONCE.express.use("/", ONCE.express.serveIndex("./dist"));
+    ONCE.express.use("/", express.static("./dist"));
 
 
     this.servers = [];
@@ -148,7 +148,7 @@ export class OnceServer {
       case "GET":
         switch (localPath) {
           case "/":
-            this.renderHTML("src/html/Once.html", "text/html", response);
+            this.renderHTML("./dist/EAMD.ucp/Components/com/github/ucpComponents/Cerulean-Circle-GmbH/once.ts/html/Once.html", "text/html", response);
             break;
           // case '/test':
           //     response.redirect(ONCE.localPath + '/test/html/Once.mochaTest.html');
