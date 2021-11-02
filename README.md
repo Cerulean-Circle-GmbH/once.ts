@@ -35,8 +35,6 @@ npx tslint --init
 ```
 npm install -D ts-node nodemon  npm-run-all
 ```
-
-test
 # Definition file generate e.g.
 npx tsc -d Once.class.ts 
 
