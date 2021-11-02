@@ -6,14 +6,26 @@ import serveIndex from "serve-index";
 import path from "path"
 
 
-export default class OnceServer {
+export class OnceServer {
   private servers: any[] = [];
-  private dynamicPort: number | undefined;
+  private readonly defaultPorts: number[] = [ /*80,*/ 777, 7777, 8077, 8080];
+  private dynamicPort: number = this.defaultPorts[0];
+  public static readonly pathSeperator: string = path.sep;
+  static startPath: string;
+
   static start() {
     new OnceServer().init()
   }
 
+  static getPlatformIndependantPathString(pathString: string) {
+    const piPArray = pathString.split(this.pathSeperator);
+    return piPArray.join("/");
+  }
 
+  static getPlatformSpecificPathString(pathString: string) {
+    const piPArray = this.getPlatformIndependantPathString(pathString).split('/');
+    return piPArray.join(this.pathSeperator);
+  }
 
 
   async init() {
@@ -22,9 +34,26 @@ export default class OnceServer {
     //     logger.error(err, err.stack);
     // })
 
+    // path.sep;
+
+    //OnceServer.startPath = OnceServer.getPlatformIndependantPathString(__dirname + OnceServer.pathSeperator);
+    // ONCE.installationMode = Once.INSTALLATION_MODE.TRANSIENT;
+
+    // ONCE.global.Buffer = ONCE.global.Buffer || require('buffer').Buffer;
+
+
+    // if (typeof atob === 'undefined') {
+    //   ONCE.global.atob = function (b64Encoded) {
+    //     return new Buffer.from(b64Encoded, 'base64').toString('binary');
+    //   };
+    // }
+    ONCE.ENV = process.env;
+
+    logger.log("Arguments: ", process.argv);
+    logger.log("Environment: ", process.env);
 
     ONCE.express = express();
-  ONCE.express.get("/", this.handleHTTPRequest.bind(this));
+    ONCE.express.get("/", this.handleHTTPRequest.bind(this));
     ONCE.express.serveIndex = serveIndex;
     ONCE.express.use("/", ONCE.express.serveIndex("/Users/Shared/dev/Workspaces/2cuGitHub/once.ts/"));
     ONCE.express.use("/", express.static("/Users/Shared/dev/Workspaces/2cuGitHub/once.ts/"));
@@ -37,18 +66,26 @@ export default class OnceServer {
                 ONCE.startServer(host);
             });
             */
-    this.dynamicPort = 8080;
-    const dynamicPort = await this.startServer(
+
+    this.dynamicPort = await this.startServer(
       "http://localhost:" + this.dynamicPort,
       this.dynamicPort
     );
   }
 
-  startServer(host: string, dynamicPort: number) {
+  async startServer(host: string, dynamicPort: number | undefined): Promise<number> {
     return new Promise((resolve, reject) => {
       const currentURL = new URL(host);
-      const port = parseInt(currentURL.port, 10);
+      let port: number | undefined;
+      if (currentURL.port) {
+        port = parseInt(currentURL.port, 10);
+      }
+      else {
+        port = 80;
+      }
+
       const server = http.createServer(ONCE.express);
+      const ports = this.defaultPorts;
       server.on("error", (err: { code: string }) => {
         logger.error("XXX", err);
         if (err.code !== "EADDRINUSE") {
@@ -57,7 +94,14 @@ export default class OnceServer {
           return reject(err);
         }
         logger.log("/////////////");
-        if (dynamicPort) server.listen(++dynamicPort);
+        dynamicPort = ports.shift();
+        if (dynamicPort) {
+          server.listen(dynamicPort);
+          this.dynamicPort = dynamicPort;
+        }
+        else {
+          server.listen(++this.dynamicPort);
+        }
         logger.log(dynamicPort);
       });
       server.on("listening", () => {
@@ -66,12 +110,13 @@ export default class OnceServer {
         if (dynamicPort)
           logger.log(
             "ONCE Server listening on dynamic port: http://localhost:" +
-              dynamicPort
+            dynamicPort
           );
         else logger.log("ONCE Server listening on " + currentURL.toString());
         // server.state = Once.STATE_STARTED;
-        this.dynamicPort = dynamicPort;
-        resolve(port);
+        if (dynamicPort) this.dynamicPort = dynamicPort;
+        if (port) resolve(port);
+        else resolve(-1);
       });
       server.listen(port);
     });
@@ -159,3 +204,4 @@ export default class OnceServer {
     });
   }
 }
+
