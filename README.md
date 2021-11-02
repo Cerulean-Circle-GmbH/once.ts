@@ -20,13 +20,15 @@ npm init
 ```
 
 ```
-npm i -D express
-npm i -D serve-index
+npm i -D express serve-index express-static path
 
 npm i -D typescript
 npx tsc --init
 npm install --save-dev tslint
 npx tslint --init
+// update tsconfig:  "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
+   
+ 
 ```
 
 ## setup debugging & watch
