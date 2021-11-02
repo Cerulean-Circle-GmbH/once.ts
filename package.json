@@ -5,7 +5,7 @@
   "main": "dist/Once.class.js",
   "type": "module",
   "scripts": {
-    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "prebuildXX": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "rimraf dist && tsc && cp -r src/html dist/html",
     "start": "node dist/Once.class.js",
     "dev:start": "npm-run-all build start",
