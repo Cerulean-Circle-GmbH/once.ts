@@ -78,6 +78,7 @@ export class Once {
       //   global.document = null;
       ONCE.global = global;
     } else {
+
       logger.log("not in a node environment");
       // if (ONCE.global.frameElement && iframeSupport) {
       //     logger.log("running in an iFrame");
