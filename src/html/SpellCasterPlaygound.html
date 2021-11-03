@@ -17,24 +17,20 @@
                 static start() {
                     if (!this.singleton) {
                         this.singleton = new this();
+                       this.singleton.textareas = document.querySelectorAll("textarea");
                     }
                     return this.singleton;
                 }
-                registerInput(element) {
-                  this.input=element;
 
-                }
-                registerModelOutput(element) {
-                    this.ModelOutput = element
-                }
-                registerClassOutput(element) {
-                    this.ClassOutput=element
-                }
+                get input() {return this.textareas[0];}
+                get modelOutput() {return this.textareas[1];}
+                get classOutput() {return this.textareas[2];}
+          
 
                 onKeyup(event) {
 
                     switch(event.srcElement){
-                         case this.input: this.ModelOutput.value=this.input.value;break;
+                         case this.input: this.modelOutput.value=this.input.value;break;
                     }
                     console.log(this, event);
                 }
@@ -44,9 +40,9 @@
     </head>
     <body onload="vc=VC.start()">
         <H1>Meta Input</H1>
-        <textarea rows="10" onload="vc.registerInput(this)" onkeyup="vc.onKeyup(event)"></textarea>
+        <textarea rows="10" load="vc.registerInput(this)" onkeyup="vc.onKeyup(event)"></textarea>
         <H1>Meta Model Output</H1>
-        <textarea rows="10" onload="vc.registerModelOutput(this)" onkeyup="vc.onKeyup(event)"></textarea>
+        <textarea rows="10" load="vc.registerModelOutput(this)" onkeyup="vc.onKeyup(event)"></textarea>
         <H1>Meta Class Output</H1>
         <textarea rows="10" onload="vc.registerClassOutput(this)" onkeyup="vc.onKeyup(event)"></textarea>
     </body>
