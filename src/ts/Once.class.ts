@@ -1,7 +1,5 @@
 import { OnceServer } from './OnceServer';
 
-
-
 /*
  * The Web 4.0 ™ platform is supported by enterprise level subscription through Cerulean Circle GmbH
  *    Copyright (C) 2017  Marcel Donges (marcel@donges.it)
@@ -49,7 +47,7 @@ export enum REPOSITORY {
   SCENARIOS = "/Scenarios"
 }
 
-module Once {
+namespace Once {
 
   export enum MODE {
     NAVIGATOR,
@@ -214,14 +212,14 @@ module Once {
 
 
     }
-    findNamespaceAndVersion(repositoryRootIndex: number) {
-      ONCE.path = ONCE.startPath.substr(repositoryRootIndex, ONCE.startPath.indexOf("/src") - repositoryRootIndex);
-      let namespaces = ONCE.path.split(ONCE.pathSeperator);
-      ONCE.versionNumber = namespaces.pop() || "";
-      namespaces = namespaces.splice(3);
-      ONCE.versionNamespace = ONCE.versionNumber.replace(/\./g, "_");
-      ONCE.namespaceString = namespaces.join(".");
-    }
+    // findNamespaceAndVersion(repositoryRootIndex: number) {
+    //   ONCE.path = ONCE.startPath.substr(repositoryRootIndex, ONCE.startPath.indexOf("/src") - repositoryRootIndex);
+    //   let namespaces = ONCE.path.split(ONCE.pathSeperator);
+    //   ONCE.versionNumber = namespaces.pop() || "";
+    //   namespaces = namespaces.splice(3);
+    //   ONCE.versionNamespace = ONCE.versionNumber.replace(/\./g, "_");
+    //   ONCE.namespaceString = namespaces.join(".");
+    // }
 
     async initClientsideOnce() {
       ONCE.installationMode = Once.INSTALLATION_MODE.TRANSIENT;

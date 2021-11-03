@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SpellCaster 1.0.0</title>
+        <meta charset="utf-8">
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../esm/Once.class.js" type="module"></script>
+        <script lang="ts">
+            class Word {
+
+            }
+            class Unit {
+
+            }
+
+            class VC {
+                static start() {
+                    if (!this.singleton) {
+                        this.singleton = new this();
+                    }
+                    return this.singleton;
+                }
+                registerInput(element) {
+                  this.input=element;
+
+                }
+                registerModelOutput(element) {
+                    this.ModelOutput = element
+                }
+                registerClassOutput(element) {
+                    this.ClassOutput=element
+                }
+
+                onKeyup(event) {
+
+                    switch(event.srcElement){
+                         case this.input: this.ModelOutput.value=this.input.value;break;
+                    }
+                    console.log(this, event);
+                }
+
+            }
+        </script>
+    </head>
+    <body onload="vc=VC.start()">
+        <H1>Meta Input</H1>
+        <textarea rows="10" onload="vc.registerInput(this)" onkeyup="vc.onKeyup(event)"></textarea>
+        <H1>Meta Model Output</H1>
+        <textarea rows="10" onload="vc.registerModelOutput(this)" onkeyup="vc.onKeyup(event)"></textarea>
+        <H1>Meta Class Output</H1>
+        <textarea rows="10" onload="vc.registerClassOutput(this)" onkeyup="vc.onKeyup(event)"></textarea>
+    </body>
+</html>

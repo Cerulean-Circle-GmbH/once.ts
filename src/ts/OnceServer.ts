@@ -36,7 +36,7 @@ export class OnceServer {
 
     // path.sep;
 
-    //OnceServer.startPath = OnceServer.getPlatformIndependantPathString(__dirname + OnceServer.pathSeperator);
+    // OnceServer.startPath = OnceServer.getPlatformIndependantPathString(__dirname + OnceServer.pathSeperator);
     // ONCE.installationMode = Once.INSTALLATION_MODE.TRANSIENT;
 
     // ONCE.global.Buffer = ONCE.global.Buffer || require('buffer').Buffer;
