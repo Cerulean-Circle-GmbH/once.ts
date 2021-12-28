@@ -25,15 +25,12 @@
       }
  */
 
-import { BrowserKernel } from './BrowserKernel.js'
-import { DevelopmentExpressKernel } from './DevelopmentExpressKernel.js'
-import { ExpressKernel } from './ExpressKernel.js'
 import { Thinglish } from './Thinglish.js'
 
-function getNodeKernel () {
+async function getNodeKernel () {
   switch (process.env.NODE_ENV) {
-    case 'development': return DevelopmentExpressKernel
-    default: return ExpressKernel
+    case 'development': return (await import('./DevelopmentExpressKernel.js')).DevelopmentExpressKernel
+    default: return (await import('./ExpressKernel.js')).ExpressKernel
   }
 }
 
@@ -41,9 +38,10 @@ export async function start () {
   if (Thinglish.isNode) {
     console.log(process.env.NGROK_AUTH)
 
-    ONCE = Thinglish.GetInstance(getNodeKernel())
+    ONCE = Thinglish.GetInstance(await getNodeKernel())
   } else {
-    ONCE = Thinglish.GetInstance(BrowserKernel)
+    const browserKernel = (await import('./BrowserKernel.js')).BrowserKernel
+    ONCE = Thinglish.GetInstance(browserKernel)
   }
   await ONCE.start()
 }

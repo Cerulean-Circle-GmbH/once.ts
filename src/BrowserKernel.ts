@@ -7,6 +7,7 @@ export class BrowserKernel extends BaseKernel {
 
   async start () {
     console.log('running in browser')
+    document.body.innerText = 'ONCE for Browser LOADED'
     return this
   }
 }

@@ -14,8 +14,8 @@ private __dirname = dirname(this.__filename)
 async start (port = 8080) {
   console.log('running in node')
   this.express.use(cors())
-  this.express.use('/EAMD.ucp', serveIndex('EAMD.ucp', { icons: true }))
-  this.express.use('/EAMD.ucp', express.static('EAMD.ucp', {}))
+  this.express.use('/EAMD.ucp', serveIndex('dist/EAMD.ucp', { icons: true }))
+  this.express.use('/EAMD.ucp', express.static('dist/EAMD.ucp', {}))
 
   this.express.get('/', (req, res) => {
     res.send(this.__dirname)
