@@ -4,6 +4,9 @@ import fs from 'fs'
 import https from 'https'
 import path from 'path'
 
+// @ts-ignore
+// import * as selfsigned from 'selfsigned'
+
 export class DevelopmentExpressKernel extends ExpressKernel {
   async start (port = 8443) {
     await super.start(port)
@@ -13,6 +16,18 @@ export class DevelopmentExpressKernel extends ExpressKernel {
   }
 
   private getDevCertificate ():{key:string, cert:string} {
+    // const attrs = [{ name: 'commonName', value: 'localhost' }]
+    // const pems = selfsigned.generate(attrs, {
+    //   keySize: 2048, // the size for the private key in bits (default: 1024)
+    //   days: 30, // how long till expiry of the signed certificate (default: 365)
+    //   algorithm: 'sha256', // sign the certificate with specified algorithm (default: 'sha1')
+    //   extensions: [{ name: 'basicConstraints', cA: true }], // certificate extensions array
+    //   pkcs7: true, // include PKCS#7 as part of the output (default: false)
+    //   clientCertificate: true, // generate client cert signed by the original key (default: false)
+    //   clientCertificateCN: 'jdoe' // client certificate's common name (default: 'John Doe jdoe123')
+    // })
+    // console.log('PEMS', pems)
+    // return { key: pems.private, cert: pems.cert }
     const folder = '.ssl'
     const certPath = path.join(folder, 'cert.pem')
     const keyPath = path.join(folder, 'key.pem')
@@ -100,7 +115,8 @@ export class DevelopmentExpressKernel extends ExpressKernel {
   async startServer (port: number) {
     const server = https.createServer(this.getDevCertificate(), this.express)
     server.listen(port, 'localhost', () => {
-      console.log(`HTTPS server listening at https://localhost:${port}`)
+      console.log(`localhost:   https://localhost${port}`)
+      console.log(`repository:  https://localhost${port}/EAMD.ucp`)
     })
   }
 }

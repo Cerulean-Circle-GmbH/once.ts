@@ -27,7 +27,8 @@ async start (port = 8080) {
 protected async startServer (port:number) {
   const server = http.createServer(this.express)
   server.listen(port, () => {
-    console.log(`HTTP server listening at http://localhost:${port}`)
+    console.log(`localhost:   http://localhost${port}`)
+    console.log(`repository:  http://localhost${port}/EAMD.ucp`)
   })
 }
 }

@@ -1,5 +1,5 @@
 export class Thinglish {
-  static GetInstance<T> (CTOR: { new (): T }) {
+  static getInstance<T> (CTOR: { new (): T }) {
     return new CTOR()
   }
 
@@ -23,5 +23,9 @@ export class Thinglish {
       self.constructor &&
       self.constructor.name === 'DedicatedWorkerGlobalScope'
     )
+  }
+
+  static isServiceWorkerSupported () {
+    return navigator && 'serviceWorker' in navigator
   }
 }
