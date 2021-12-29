@@ -1,24 +1,13 @@
-// self.addEventListener('install', function (event) {
-//   // Perform install steps
-//   event.waitUntil(
-//     caches.open(CACHE_NAME)
-//       .then(function (cache) {
-//         console.log('Opened cache')
-//         return cache.addAll(urlsToCache)
-//       })
-//   )
-// })
-
 import { BaseKernel } from './BaseKernel.js'
 
 const CACHE_NAME = 'my-site-cache-v1'
 const urlsToCache = [
+  '/EAMD.ucp/BaseKernel.js',
+  '/EAMD.ucp/BrowserKernel.js',
   '/EAMD.ucp/Once.class.js',
   '/EAMD.ucp/Once.html',
-  '/EAMD.ucp/BrowserKernel.js',
   '/EAMD.ucp/Thinglish.js',
   '/EAMD.ucp/ServiceWorkerKernel.js'
-
 ]
 
 export class ServiceWorkerKernel extends BaseKernel {
