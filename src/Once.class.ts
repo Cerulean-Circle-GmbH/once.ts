@@ -25,24 +25,5 @@
       }
  */
 
-import { Thinglish } from './Thinglish.js'
-
-async function getNodeKernel () {
-  switch (process.env.NODE_ENV) {
-    case 'localtunnel': return (await import('./LocalTunnelKernel.js')).LocalTunnelKernel
-    case 'development': return (await import('./DevelopmentExpressKernel.js')).DevelopmentExpressKernel
-    default: return (await import('./ExpressKernel.js')).ExpressKernel
-  }
-}
-
-export async function start () {
-  if (Thinglish.isNode) {
-    ONCE = Thinglish.getInstance(await getNodeKernel())
-  } else {
-    const browserKernel = (await import('./BrowserKernel.js')).BrowserKernel
-    ONCE = Thinglish.getInstance(browserKernel)
-  }
-  await ONCE.start()
-}
-
-start()
+import { Once } from './EAMD.ucp/Thinglish/Once.js'
+Once.start()

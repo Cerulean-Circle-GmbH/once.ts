@@ -10,7 +10,7 @@ export class Thinglish {
   }
 
   static get isNode () {
-    return (
+return (
       typeof process !== 'undefined' &&
       process.versions != null &&
       process.versions.node != null
@@ -18,14 +18,22 @@ export class Thinglish {
   }
 
   static get isWebWorker () {
-    return (
+return (
       typeof self === 'object' &&
       self.constructor &&
       self.constructor.name === 'DedicatedWorkerGlobalScope'
     )
   }
 
+   static get isServiceWorker () {
+    return (
+      typeof self === 'object' &&
+      self.constructor &&
+      self.constructor.name === 'ServiceWorkerGlobalScope'
+    )
+  }
+
   static isServiceWorkerSupported () {
-    return navigator && 'serviceWorker' in navigator
+return navigator && 'serviceWorker' in navigator
   }
 }

@@ -3,13 +3,10 @@ import express from 'express'
 import http from 'http'
 import cors from 'cors'
 import serveIndex from 'serve-index'
-// import { fileURLToPath } from 'url'
 import  path  from 'path'
 
-export class ExpressKernel extends NodeJsKernel {
+export  class ExpressKernel extends NodeJsKernel {
   protected express = express()
-  // private __filename = fileURLToPath(import.meta.url)
-// private __dirname = dirname(this.__filename)
 
 async start (port = 8080) {
   console.log('running in node')

@@ -8,14 +8,17 @@
     "clean": "rimraf dist/*",
     "lint": " eslint . --ext .ts --fix",
     "tsc": "tsc",
-    "build": "npm-run-all clean lint tsc copy:files",
+    "tsc:service-worker": "tsc -p tsconfig.service-worker.json",
+    "build": "npm-run-all clean lint tsc tsc:service-worker copy:files",
     "dev:start": "npm-run-all build start:node",
     "dev": "NODE_ENV=development nodemon --watch src -e ts,html --exec npm run dev:start",
     "tunnel": "NODE_ENV=localtunnel nodemon --watch src -e ts,html --exec npm run dev:start",
-    "start:node": "node -r dotenv/config dist/EAMD.ucp/Once.class.js",
+    "start:node": "node -r dotenv/config dist/Once.class.js",
     "start": "NODE_ENV=production npm-run-all build start:node",
     "copy:files": "node --loader ts-node/esm scripts/copyFiles.ts",
-    "typedoc":"typedoc src/**/*.ts",
+    "typedoc:clean": "rimraf docs/*",
+    "typedoc:create": "typedoc",
+    "typedoc": "npm-run-all typedoc:clean typedoc:create ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -46,6 +49,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "express": "^4.17.2",
+    "graphviz": "^0.0.9",
     "localtunnel": "^2.0.2",
     "node-forge": "^0.10.0",
     "nodemon": "^2.0.15",
@@ -53,11 +57,11 @@
     "rimraf": "^3.0.2",
     "serve-index": "^1.9.1",
     "ts-node": "^10.4.0",
-    "typedoc": "^0.22.10",
-    "typescript": "^4.5.4",
+    "typedoc": "0.22.9",
+    "typedoc-plugin-mdn-links": "^1.0.4",
+    "typedoc-plugin-mermaid": "^1.6.0",
+    "typedoc-umlclass": "^0.6.0",
+    "typescript": "4.4",
     "yaml": "^1.10.2"
-  },
-  "dependencies": {
-    "selfsigned": "^1.10.11"
   }
 }

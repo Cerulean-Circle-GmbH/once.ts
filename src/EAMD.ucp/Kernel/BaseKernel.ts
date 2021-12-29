@@ -4,7 +4,11 @@
 declare global {
   var ONCE:BaseKernel
 }
-
+/**
+ * @mermaid
+ *   graph TB
+ *   mermaid.js --> TypeDoc;
+ */
 export abstract class BaseKernel {
   protected global: typeof globalThis;
 

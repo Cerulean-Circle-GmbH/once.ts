@@ -1,17 +1,18 @@
-import { BaseKernel } from './EAMD.ucp/BaseKernel.js'
+/// <reference no-default-lib="true"/>
+/// <reference lib="webworker"/>
 
 const CACHE_NAME = 'my-site-cache-v1'
 const urlsToCache = [
-  '/EAMD.ucp/BaseKernel.js',
-  '/EAMD.ucp/BrowserKernel.js',
-  '/EAMD.ucp/Once.class.js',
+  '/EAMD.ucp/Kernel/BaseKernel.js',
+  '/EAMD.ucp/Kernel/BrowserKernel.js',
+  '/EAMD.ucp/Thinglish/Thinglish.js',
+  '/EAMD.ucp/Thinglish/Once.js',
+  '/Once.class.js',
   '/Once.html',
-  '/EAMD.ucp/Thinglish.js',
-  '/ServiceWorkerKernel.js'
+  'manifest.json'
 ]
-
-export class ServiceWorkerKernel extends BaseKernel {
-  static install (event:any) {
+export class ServiceWorkerKernel {
+  private install (event:ExtendableEvent) {
     console.log('service worker is getting installed')
     // Perform install steps
     event.waitUntil(
@@ -24,10 +25,12 @@ export class ServiceWorkerKernel extends BaseKernel {
     )
   }
 
-  static fetch (event:any) {
+  private fetch (event:FetchEvent) {
     event.respondWith(
       caches.match(event.request)
         .then(function (response) {
+          console.log('service worker fetch')
+
           // Cache hit - return response
           if (response) {
             return response
@@ -58,8 +61,9 @@ export class ServiceWorkerKernel extends BaseKernel {
     )
   }
 
-  static activate (event:any) {
+  private activate (event:ExtendableEvent) {
     const cacheAllowlist = ['pages-cache-v1', 'blog-posts-cache-v1']
+    console.log('service worker activate')
 
     event.waitUntil(
       caches.keys().then(function (cacheNames) {
@@ -76,29 +80,35 @@ export class ServiceWorkerKernel extends BaseKernel {
     )
   }
 
-  constructor () {
-    super(self)
+  // constructor () {
+  //   super(self)
+  // }
+
+  addEventListener (obj:any) {
+    obj.addEventListener('install', this.install)
+    obj.addEventListener('fetch', this.fetch)
+    obj.addEventListener('activate', this.activate)
   }
 
-  async start () {
+  async installServiceWorker (navigator:any) {
+    console.log('service worker start method')
+    // eslint-disable-next-line no-debugger
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/ServiceWorkerKernel.js', { type: 'module', scope: '/' }).then(function (registration) {
+      navigator.serviceWorker.register('/Once.class.js', { type: 'module', scope: '/' }).then(function (registration:any) {
         // Registration was successful
         console.log('ServiceWorker registration successful with scope: ', registration.scope)
-        document.body.innerText = 'ServiceWorker registration successful with scope: ' + registration.scope
-      }, function (err) {
+        // document.body.innerText = 'ServiceWorker registration successful with scope: ' + registration.scope
+      }, function (err:any) {
         // registration failed :(
         console.log('ServiceWorker registration failed: ', err)
-        document.body.innerText = err
+        // document.body.innerText = err
       })
     } else {
-      document.body.innerText = 'no service worker'
+      console.log('no service worker found')
+      // document.body.innerText = 'no service worker'
     }
 
-    return this
+  //   return this
+  // }
   }
 }
-
-self.addEventListener('install', ServiceWorkerKernel.install)
-self.addEventListener('fetch', ServiceWorkerKernel.fetch)
-self.addEventListener('activate', ServiceWorkerKernel.activate)

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="228px" preserveAspectRatio="none" style="width:229px;height:228px;background:#00000000;" version="1.1" viewBox="0 0 229 228" width="229px" zoomAndPan="magnify"><defs><filter height="300%" id="f1tt14xtv57lvt" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[e9048501b1a3b6aa1a880abe462364a7]
+class BrowserKernel--><rect codeLine="4" fill="#FEFECE" filter="url(#f1tt14xtv57lvt)" height="73.9102" id="BrowserKernel" style="stroke:#A80036;stroke-width:1.5;" width="206" x="9" y="141"/><ellipse cx="66.25" cy="157" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M68.7231,163.1431 Q68.1421,163.4419 67.5029,163.5913 Q66.8638,163.7407 66.1582,163.7407 Q63.6514,163.7407 62.3315,162.0889 Q61.0117,160.437 61.0117,157.3159 Q61.0117,154.1865 62.3315,152.5347 Q63.6514,150.8828 66.1582,150.8828 Q66.8638,150.8828 67.5112,151.0322 Q68.1587,151.1816 68.7231,151.4805 L68.7231,154.2031 Q68.0923,153.6221 67.4988,153.3523 Q66.9053,153.0825 66.2744,153.0825 Q64.9297,153.0825 64.2449,154.1492 Q63.5601,155.2158 63.5601,157.3159 Q63.5601,159.4077 64.2449,160.4744 Q64.9297,161.541 66.2744,161.541 Q66.9053,161.541 67.4988,161.2712 Q68.0923,161.0015 68.7231,160.4204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="83" x="86.75" y="161.5352">BrowserKernel</text><line style="stroke:#A80036;stroke-width:1.5;" x1="10" x2="214" y1="173" y2="173"/><polygon fill="none" points="20,179,24,183,20,187,16,183" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="135" x="29" y="187.6348">global : typeof globalThis</text><line style="stroke:#A80036;stroke-width:1.5;" x1="10" x2="214" y1="193.9551" y2="193.9551"/><ellipse cx="20" cy="204.9551" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="180" x="29" y="208.5898">start() : Promise&lt;BrowserKernel&gt;</text><!--MD5=[fa6597bb1df2e0c2eff85f2ee0e5bc89]
+class BaseKernel--><rect codeLine="8" fill="#FEFECE" filter="url(#f1tt14xtv57lvt)" height="73.9102" id="BaseKernel" style="stroke:#A80036;stroke-width:1.5;" width="187" x="18.5" y="7"/><ellipse cx="75.75" cy="23" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M75.6133,18.3481 L74.4595,23.4199 L76.7754,23.4199 Z M74.1191,16.1069 L77.1157,16.1069 L80.4609,28.5 L78.0122,28.5 L77.2485,25.437 L73.9697,25.437 L73.2227,28.5 L70.7739,28.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="64" x="96.25" y="27.5352">BaseKernel</text><line style="stroke:#A80036;stroke-width:1.5;" x1="19.5" x2="204.5" y1="39" y2="39"/><polygon fill="none" points="29.5,45,33.5,49,29.5,53,25.5,49" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="135" x="38.5" y="53.6348">global : typeof globalThis</text><line style="stroke:#A80036;stroke-width:1.5;" x1="19.5" x2="204.5" y1="59.9551" y2="59.9551"/><ellipse cx="29.5" cy="70.9551" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacing" textLength="161" x="38.5" y="74.5898">start() : Promise&lt;BaseKernel&gt;</text><!--MD5=[21952aa91086cf86e79f54739ac984bc]
+reverse link BaseKernel to BrowserKernel--><path codeLine="12" d="M112,101.38 C112,114.8 112,128.76 112,140.97 " fill="none" id="BaseKernel-backto-BrowserKernel" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="105,101.07,112,81.07,119,101.07,105,101.07" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[30dae7211ee26cd1b91397babe028148]
+@startuml
+skinparam BackgroundColor transparent
+hide empty methods
+hide empty fields
+class "BrowserKernel" {
+    #global : typeof globalThis
+    +start() : Promise<BrowserKernel>
+}
+abstract class "BaseKernel" {
+    #global : typeof globalThis
+    {abstract} +start() : Promise<BaseKernel>
+}
+"BaseKernel" <|- - "BrowserKernel"
+@enduml
+
+PlantUML version 1.2021.14(Fri Nov 12 17:46:50 CET 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>
