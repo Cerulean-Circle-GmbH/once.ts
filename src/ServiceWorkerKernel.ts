@@ -85,10 +85,14 @@ export class ServiceWorkerKernel extends BaseKernel {
       navigator.serviceWorker.register('/EAMD.ucp/ServiceWorkerKernel.js', { type: 'module', scope: '/EAMD.ucp/' }).then(function (registration) {
         // Registration was successful
         console.log('ServiceWorker registration successful with scope: ', registration.scope)
+        document.body.innerText = 'ServiceWorker registration successful with scope: ' + registration.scope
       }, function (err) {
         // registration failed :(
         console.log('ServiceWorker registration failed: ', err)
+        document.body.innerText = err
       })
+    } else {
+      document.body.innerText = 'no service worker'
     }
 
     return this
