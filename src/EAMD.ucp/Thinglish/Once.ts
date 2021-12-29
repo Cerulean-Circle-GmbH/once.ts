@@ -1,6 +1,10 @@
 import { Thinglish } from './Thinglish.js'
 //@ts-ignore
 import {ServiceWorkerKernel} from '../ServiceWorker/ServiceWorkerKernel.js'
+
+/**
+ * 
+ */
 export  class Once {
     private static async getNodeKernel () {
         switch (process.env.NODE_ENV) {
