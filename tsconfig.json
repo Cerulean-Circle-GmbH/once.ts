@@ -92,5 +92,11 @@
   },
   "include": [
     "src/**/*.ts"
-  ]
+  ],
+  "typedocOptions": {
+    "out": "docs",
+    "name": "ONCE Documentation",
+    "excludeExternals": true,
+    "includeVersion": true,
+  }
 }

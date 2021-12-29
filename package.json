@@ -8,13 +8,14 @@
     "clean": "rimraf dist/*",
     "lint": " eslint . --ext .ts --fix",
     "tsc": "tsc",
-    "build": "npm-run-all clean lint tsc copy:files",
+    "build": "npm-run-all clean lint tsc copy:files typedoc",
     "dev:start": "npm-run-all build start:node",
     "dev": "NODE_ENV=development nodemon --watch src -e ts,html --exec npm run dev:start",
     "tunnel": "NODE_ENV=localtunnel nodemon --watch src -e ts,html --exec npm run dev:start",
     "start:node": "node -r dotenv/config dist/EAMD.ucp/Once.class.js",
     "start": "NODE_ENV=production npm-run-all build start:node",
     "copy:files": "node --loader ts-node/esm scripts/copyFiles.ts",
+    "typedoc":"typedoc src/**/*.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -52,6 +53,7 @@
     "rimraf": "^3.0.2",
     "serve-index": "^1.9.1",
     "ts-node": "^10.4.0",
+    "typedoc": "^0.22.10",
     "typescript": "^4.5.4",
     "yaml": "^1.10.2"
   },

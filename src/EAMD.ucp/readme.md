@@ -1,0 +1,1 @@
+test in eamd folder
