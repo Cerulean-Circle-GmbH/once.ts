@@ -8,7 +8,7 @@
     "clean": "rimraf dist/*",
     "lint": " eslint . --ext .ts --fix",
     "tsc": "tsc",
-    "build": "npm-run-all clean lint tsc copy:files typedoc",
+    "build": "npm-run-all clean lint tsc copy:files",
     "dev:start": "npm-run-all build start:node",
     "dev": "NODE_ENV=development nodemon --watch src -e ts,html --exec npm run dev:start",
     "tunnel": "NODE_ENV=localtunnel nodemon --watch src -e ts,html --exec npm run dev:start",
