@@ -1,13 +1,13 @@
-import { BaseKernel } from './BaseKernel.js'
+import { BaseKernel } from './EAMD.ucp/BaseKernel.js'
 
 const CACHE_NAME = 'my-site-cache-v1'
 const urlsToCache = [
   '/EAMD.ucp/BaseKernel.js',
   '/EAMD.ucp/BrowserKernel.js',
   '/EAMD.ucp/Once.class.js',
-  '/EAMD.ucp/Once.html',
+  '/Once.html',
   '/EAMD.ucp/Thinglish.js',
-  '/EAMD.ucp/ServiceWorkerKernel.js'
+  '/ServiceWorkerKernel.js'
 ]
 
 export class ServiceWorkerKernel extends BaseKernel {
@@ -82,7 +82,7 @@ export class ServiceWorkerKernel extends BaseKernel {
 
   async start () {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/EAMD.ucp/ServiceWorkerKernel.js', { type: 'module', scope: '/EAMD.ucp/' }).then(function (registration) {
+      navigator.serviceWorker.register('/ServiceWorkerKernel.js', { type: 'module', scope: '/' }).then(function (registration) {
         // Registration was successful
         console.log('ServiceWorker registration successful with scope: ', registration.scope)
         document.body.innerText = 'ServiceWorker registration successful with scope: ' + registration.scope
