@@ -24,3 +24,6 @@
             ]
       }
  */
+
+import { Once } from './EAMD.ucp/Thinglish/Once.js'
+Once.start()

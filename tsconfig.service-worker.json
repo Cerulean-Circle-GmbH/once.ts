@@ -1,0 +1,13 @@
+{
+    "extends": "./tsconfig",
+    "compilerOptions": {
+        "outDir": "./dist/EAMD.ucp", /* Specify an output folder for all emitted files. */
+        "lib": [
+            "WebWorker"
+        ]
+    },
+    "exclude": [],
+    "include": [
+        "src/ServiceWorker/*.ts"
+    ]
+}

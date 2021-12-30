@@ -1,0 +1,1820 @@
+{
+	"id": 0,
+	"name": "ONCE Documentation - v1.0.0",
+	"kind": 1,
+	"flags": {},
+	"originalName": "ONCE Documentation",
+	"children": [
+		{
+			"id": 1,
+			"name": "BaseKernel",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 2,
+					"name": "BaseKernel",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isAbstract": true
+					},
+					"comment": {
+						"tags": [
+							{
+								"tag": "mermaid",
+								"text": "\n  graph TB\n  mermaid.js --> TypeDoc;\n"
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 3,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "BaseKernel.ts",
+									"line": 15,
+									"character": 2
+								}
+							],
+							"signatures": [
+								{
+									"id": 4,
+									"name": "new BaseKernel",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 5,
+											"name": "gt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "query",
+												"queryType": {
+													"type": "reference",
+													"name": "globalThis"
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 2,
+										"name": "BaseKernel"
+									}
+								}
+							]
+						},
+						{
+							"id": 6,
+							"name": "global",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "BaseKernel.ts",
+									"line": 13,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "query",
+								"queryType": {
+									"type": "reference",
+									"name": "globalThis"
+								}
+							}
+						},
+						{
+							"id": 7,
+							"name": "start",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isAbstract": true
+							},
+							"sources": [
+								{
+									"fileName": "BaseKernel.ts",
+									"line": 20,
+									"character": 11
+								}
+							],
+							"signatures": [
+								{
+									"id": 8,
+									"name": "start",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 2,
+												"name": "BaseKernel"
+											}
+										],
+										"name": "Promise"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								3
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								6
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								7
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "BaseKernel.ts",
+							"line": 12,
+							"character": 22
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"id": 10,
+							"name": "BrowserKernel"
+						},
+						{
+							"type": "reference",
+							"id": 74,
+							"name": "NodeJsKernel"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "BaseKernel.ts",
+					"line": 4,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 9,
+			"name": "BrowserKernel",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 10,
+					"name": "BrowserKernel",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"children": [
+						{
+							"id": 11,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "BrowserKernel.ts",
+									"line": 6,
+									"character": 2
+								}
+							],
+							"signatures": [
+								{
+									"id": 12,
+									"name": "new BrowserKernel",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 10,
+										"name": "BrowserKernel"
+									},
+									"overwrites": {
+										"type": "reference",
+										"id": 4,
+										"name": "BaseKernel.constructor"
+									}
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"id": 3,
+								"name": "BaseKernel.constructor"
+							}
+						},
+						{
+							"id": 15,
+							"name": "global",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "BaseKernel.ts",
+									"line": 13,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "query",
+								"queryType": {
+									"type": "reference",
+									"name": "globalThis"
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 6,
+								"name": "BaseKernel.global"
+							}
+						},
+						{
+							"id": 13,
+							"name": "start",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "BrowserKernel.ts",
+									"line": 10,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 14,
+									"name": "start",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 10,
+												"name": "BrowserKernel"
+											}
+										],
+										"name": "Promise"
+									},
+									"overwrites": {
+										"type": "reference",
+										"id": 8,
+										"name": "BaseKernel.start"
+									}
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"id": 7,
+								"name": "BaseKernel.start"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								11
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								15
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								13
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "BrowserKernel.ts",
+							"line": 5,
+							"character": 13
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"id": 2,
+							"name": "BaseKernel"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						10
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "BrowserKernel.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 16,
+			"name": "DevelopmentExpressKernel",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 17,
+					"name": "DevelopmentExpressKernel",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"children": [
+						{
+							"id": 18,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 19,
+									"name": "new DevelopmentExpressKernel",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 17,
+										"name": "DevelopmentExpressKernel"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 46,
+										"name": "ExpressKernel.constructor"
+									}
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 45,
+								"name": "ExpressKernel.constructor"
+							}
+						},
+						{
+							"id": 38,
+							"name": "express",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "ExpressKernel.ts",
+									"line": 10,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Express"
+							},
+							"defaultValue": "...",
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 47,
+								"name": "ExpressKernel.express"
+							}
+						},
+						{
+							"id": 42,
+							"name": "global",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "BaseKernel.ts",
+									"line": 13,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "query",
+								"queryType": {
+									"type": "reference",
+									"name": "globalThis"
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 57,
+								"name": "ExpressKernel.global"
+							}
+						},
+						{
+							"id": 28,
+							"name": "createDevCertificate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "DevelopmentExpressKernel.ts",
+									"line": 27,
+									"character": 2
+								}
+							],
+							"signatures": [
+								{
+									"id": 29,
+									"name": "createDevCertificate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 30,
+											"name": "certPath",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 31,
+											"name": "keyPath",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 32,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 34,
+													"name": "cert",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "DevelopmentExpressKernel.ts",
+															"line": 27,
+															"character": 75
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 33,
+													"name": "key",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "DevelopmentExpressKernel.ts",
+															"line": 27,
+															"character": 62
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Properties",
+													"kind": 1024,
+													"children": [
+														34,
+														33
+													]
+												}
+											]
+										}
+									}
+								}
+							]
+						},
+						{
+							"id": 23,
+							"name": "getDevCertificate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true
+							},
+							"sources": [
+								{
+									"fileName": "DevelopmentExpressKernel.ts",
+									"line": 15,
+									"character": 10
+								}
+							],
+							"signatures": [
+								{
+									"id": 24,
+									"name": "getDevCertificate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 25,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 27,
+													"name": "cert",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "DevelopmentExpressKernel.ts",
+															"line": 15,
+															"character": 44
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 26,
+													"name": "key",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "DevelopmentExpressKernel.ts",
+															"line": 15,
+															"character": 32
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Properties",
+													"kind": 1024,
+													"children": [
+														27,
+														26
+													]
+												}
+											]
+										}
+									}
+								}
+							]
+						},
+						{
+							"id": 39,
+							"name": "logUrls",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "ExpressKernel.ts",
+									"line": 30,
+									"character": 10
+								}
+							],
+							"signatures": [
+								{
+									"id": 40,
+									"name": "logUrls",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 41,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 52,
+										"name": "ExpressKernel.logUrls"
+									}
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 51,
+								"name": "ExpressKernel.logUrls"
+							}
+						},
+						{
+							"id": 20,
+							"name": "start",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "DevelopmentExpressKernel.ts",
+									"line": 8,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 21,
+									"name": "start",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 22,
+											"name": "port",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "8443"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 17,
+												"name": "DevelopmentExpressKernel"
+											}
+										],
+										"name": "Promise"
+									},
+									"overwrites": {
+										"type": "reference",
+										"id": 49,
+										"name": "ExpressKernel.start"
+									}
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"id": 48,
+								"name": "ExpressKernel.start"
+							}
+						},
+						{
+							"id": 35,
+							"name": "startServer",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "DevelopmentExpressKernel.ts",
+									"line": 100,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 36,
+									"name": "startServer",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 37,
+											"name": "port",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "void"
+											}
+										],
+										"name": "Promise"
+									},
+									"overwrites": {
+										"type": "reference",
+										"id": 55,
+										"name": "ExpressKernel.startServer"
+									}
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"id": 54,
+								"name": "ExpressKernel.startServer"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								18
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								38,
+								42
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								28,
+								23,
+								39,
+								20,
+								35
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "DevelopmentExpressKernel.ts",
+							"line": 7,
+							"character": 13
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"id": 44,
+							"name": "ExpressKernel"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						17
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "DevelopmentExpressKernel.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 43,
+			"name": "ExpressKernel",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 44,
+					"name": "ExpressKernel",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"children": [
+						{
+							"id": 45,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 46,
+									"name": "new ExpressKernel",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 44,
+										"name": "ExpressKernel"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 76,
+										"name": "NodeJsKernel.constructor"
+									}
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 75,
+								"name": "NodeJsKernel.constructor"
+							}
+						},
+						{
+							"id": 47,
+							"name": "express",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "ExpressKernel.ts",
+									"line": 10,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Express"
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 57,
+							"name": "global",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "BaseKernel.ts",
+									"line": 13,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "query",
+								"queryType": {
+									"type": "reference",
+									"name": "globalThis"
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 77,
+								"name": "NodeJsKernel.global"
+							}
+						},
+						{
+							"id": 51,
+							"name": "logUrls",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "ExpressKernel.ts",
+									"line": 30,
+									"character": 10
+								}
+							],
+							"signatures": [
+								{
+									"id": 52,
+									"name": "logUrls",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 53,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 48,
+							"name": "start",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "ExpressKernel.ts",
+									"line": 14,
+									"character": 6
+								}
+							],
+							"signatures": [
+								{
+									"id": 49,
+									"name": "start",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 50,
+											"name": "port",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "8080"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 44,
+												"name": "ExpressKernel"
+											}
+										],
+										"name": "Promise"
+									},
+									"overwrites": {
+										"type": "reference",
+										"id": 79,
+										"name": "NodeJsKernel.start"
+									}
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"id": 78,
+								"name": "NodeJsKernel.start"
+							}
+						},
+						{
+							"id": 54,
+							"name": "startServer",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "ExpressKernel.ts",
+									"line": 36,
+									"character": 16
+								}
+							],
+							"signatures": [
+								{
+									"id": 55,
+									"name": "startServer",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 56,
+											"name": "port",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "void"
+											}
+										],
+										"name": "Promise"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								45
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								47,
+								57
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								51,
+								48,
+								54
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "ExpressKernel.ts",
+							"line": 9,
+							"character": 13
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"id": 74,
+							"name": "NodeJsKernel"
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"id": 17,
+							"name": "DevelopmentExpressKernel"
+						},
+						{
+							"type": "reference",
+							"id": 59,
+							"name": "LocalTunnelKernel"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						44
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "ExpressKernel.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 58,
+			"name": "LocalTunnelKernel",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 59,
+					"name": "LocalTunnelKernel",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"children": [
+						{
+							"id": 60,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 61,
+									"name": "new LocalTunnelKernel",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 59,
+										"name": "LocalTunnelKernel"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 46,
+										"name": "ExpressKernel.constructor"
+									}
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 45,
+								"name": "ExpressKernel.constructor"
+							}
+						},
+						{
+							"id": 65,
+							"name": "express",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "ExpressKernel.ts",
+									"line": 10,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Express"
+							},
+							"defaultValue": "...",
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 47,
+								"name": "ExpressKernel.express"
+							}
+						},
+						{
+							"id": 72,
+							"name": "global",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "BaseKernel.ts",
+									"line": 13,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "query",
+								"queryType": {
+									"type": "reference",
+									"name": "globalThis"
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 57,
+								"name": "ExpressKernel.global"
+							}
+						},
+						{
+							"id": 69,
+							"name": "logUrls",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "ExpressKernel.ts",
+									"line": 30,
+									"character": 10
+								}
+							],
+							"signatures": [
+								{
+									"id": 70,
+									"name": "logUrls",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 71,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 52,
+										"name": "ExpressKernel.logUrls"
+									}
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 51,
+								"name": "ExpressKernel.logUrls"
+							}
+						},
+						{
+							"id": 66,
+							"name": "start",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "ExpressKernel.ts",
+									"line": 14,
+									"character": 6
+								}
+							],
+							"signatures": [
+								{
+									"id": 67,
+									"name": "start",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 68,
+											"name": "port",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "8080"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 59,
+												"name": "LocalTunnelKernel"
+											}
+										],
+										"name": "Promise"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 49,
+										"name": "ExpressKernel.start"
+									}
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 48,
+								"name": "ExpressKernel.start"
+							}
+						},
+						{
+							"id": 62,
+							"name": "startServer",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "LocalTunnelKernel.ts",
+									"line": 6,
+									"character": 18
+								}
+							],
+							"signatures": [
+								{
+									"id": 63,
+									"name": "startServer",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 64,
+											"name": "port",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "void"
+											}
+										],
+										"name": "Promise"
+									},
+									"overwrites": {
+										"type": "reference",
+										"id": 55,
+										"name": "ExpressKernel.startServer"
+									}
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"id": 54,
+								"name": "ExpressKernel.startServer"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								60
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								65,
+								72
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								69,
+								66,
+								62
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "LocalTunnelKernel.ts",
+							"line": 5,
+							"character": 13
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"id": 44,
+							"name": "ExpressKernel"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						59
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "LocalTunnelKernel.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 73,
+			"name": "NodeJsKernel",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 74,
+					"name": "NodeJsKernel",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isAbstract": true
+					},
+					"children": [
+						{
+							"id": 75,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "NodeJsKernel.ts",
+									"line": 4,
+									"character": 2
+								}
+							],
+							"signatures": [
+								{
+									"id": 76,
+									"name": "new NodeJsKernel",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 74,
+										"name": "NodeJsKernel"
+									},
+									"overwrites": {
+										"type": "reference",
+										"id": 4,
+										"name": "BaseKernel.constructor"
+									}
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"id": 3,
+								"name": "BaseKernel.constructor"
+							}
+						},
+						{
+							"id": 77,
+							"name": "global",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "BaseKernel.ts",
+									"line": 13,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "query",
+								"queryType": {
+									"type": "reference",
+									"name": "globalThis"
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 6,
+								"name": "BaseKernel.global"
+							}
+						},
+						{
+							"id": 78,
+							"name": "start",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isAbstract": true
+							},
+							"sources": [
+								{
+									"fileName": "BaseKernel.ts",
+									"line": 20,
+									"character": 11
+								}
+							],
+							"signatures": [
+								{
+									"id": 79,
+									"name": "start",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 2,
+												"name": "BaseKernel"
+											}
+										],
+										"name": "Promise"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"id": 8,
+										"name": "BaseKernel.start"
+									}
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 7,
+								"name": "BaseKernel.start"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								75
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								77
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								78
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "NodeJsKernel.ts",
+							"line": 3,
+							"character": 22
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"id": 2,
+							"name": "BaseKernel"
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"id": 44,
+							"name": "ExpressKernel"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						74
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "NodeJsKernel.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 80,
+			"name": "index",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 81,
+					"name": "BaseKernel",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"target": 2
+				},
+				{
+					"id": 82,
+					"name": "BrowserKernel",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"target": 10
+				},
+				{
+					"id": 83,
+					"name": "DevelopmentExpressKernel",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"target": 17
+				},
+				{
+					"id": 84,
+					"name": "ExpressKernel",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"target": 44
+				},
+				{
+					"id": 85,
+					"name": "LocalTunnelKernel",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"target": 59
+				},
+				{
+					"id": 86,
+					"name": "NodeJsKernel",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"target": 74
+				}
+			],
+			"groups": [
+				{
+					"title": "References",
+					"kind": 16777216,
+					"children": [
+						81,
+						82,
+						83,
+						84,
+						85,
+						86
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Modules",
+			"kind": 2,
+			"children": [
+				1,
+				9,
+				16,
+				43,
+				58,
+				73,
+				80
+			]
+		}
+	]
+}
