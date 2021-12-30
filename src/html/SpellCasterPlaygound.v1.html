@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SpellCaster 1.0.0</title>
+        <meta charset="utf-8">
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../esm/Once.class.js" type="module"></script>
+        <script lang="ts">
+            class Word {
+                static start() {
+                    if (!this.singleton) {
+                        this.singleton = new this();
+                        window.vc = VC.start();
+                        window[this.singleton.name]=this.singleton;
+
+
+
+                    }
+                    return this.singleton;
+                }
+                constructor() {
+                    this.name="theWord";
+                    this.space=" ";
+                }
+
+            }
+
+            class Language {
+               getWords(input) {
+                   let words = [...input]
+                   return words;
+               }
+
+               translate(input) {
+                   let output = [];
+
+
+                   for (let word of this.getWords(input)) {
+                       switch (word) {
+                        case 'j':
+                        case 'J':
+                            output.push("am");
+                            break; 
+                        case 'h':
+                        case 'H':
+                            output.push("spirit");
+                            break; 
+                        case 'w':
+                        case 'W':
+                            output.push("embrace");
+                            break; 
+                        case 'u':
+                        case 'U':
+                            output.push("you[r]");
+                            break; 
+                        case 'n':
+                        case 'N':
+                            output.push("way [to]");
+                            break; 
+                            
+                        case 'i':
+                        case 'I':
+                            output.push("[the] powerful [arm]");
+                            break; 
+                            
+                        case 't':
+                        case 'T':
+                            output.push("[dead] end");
+                            break; 
+                            
+
+                       
+                       }
+                   }
+
+
+
+                 return output.join(theWord.space)
+               }
+            }
+
+            class Unit {
+
+            }
+
+            class VC {
+                static start() {
+                    if (!this.singleton) {
+                        this.singleton = new this();
+                    }
+                    return this.singleton;
+                }
+
+                constructor() {
+                    this.language = new Language();
+                    this.textareas = document.querySelectorAll("textarea");
+                }
+
+                get input() {return this.textareas[0];}
+                get modelOutput() {return this.textareas[1];}
+                get classInput() {return this.textareas[2];}
+          
+
+                onKeyup(event) {
+
+                    switch(event.srcElement){
+                         case this.input: 
+                            this.modelOutput.value= this.language.translate(this.input.value);
+                            break;
+                    }
+                    console.log(this, event);
+                }
+
+            }
+        </script>
+    </head>
+    <body onload="Word.start()">
+        <H1>Meta Character Input</H1>
+        <textarea rows="10" onkeyup="vc.onKeyup(event)"></textarea>
+        <H1>Meta Model Output</H1>
+        <textarea rows="10"  onkeyup="vc.onKeyup(event)"></textarea>
+        <H1>Class Input</H1>
+        <textarea rows="10"  onkeyup="vc.onKeyup(event)"></textarea>
+    </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SpellCaster 2.0.0</title>
+  <meta charset="utf-8">
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../esm/Once.class.js" type="module"></script>
+  <script lang="ts">
+    class JHWH {
+      static bringForth() {
+        if (!window.theWord)
+          window.theWord = new Word();
+        
+        return window.theWord;
+      }
+    }
+    class Word {
+      constructor() {
+        this.create();
+        
+        this.name = "Heaven";
+        this.space = this.light[0];
+        this.declarator = this.light[1];
+        this.parse(this.light);
+
+      }
+      
+      create() {
+        this.light =
+        " =path = wordlist\n" +
+        "wordlist=word , list newline\n" +
+        "path=word . pathlist\n" +
+        "pathlist=word . pathlist =\n" +
+        "newline=\n\n";
+        
+          window.vc = VC.start();
+  
+        return this.light;
+      }
+      
+      
+      parse(input) {
+        let output = [];
+        let lines = input.split('\n');
+        for (let line of lines) {
+          let declaration = line.split(this.declarator);
+          let words=this.declare(declaration[0],declaration[1])
+        }
+        return output.join('\n');
+      }
+      
+      declare(word, words) {
+        this[word]=words;
+        return words;
+      }
+
+    }
+
+    class Language {
+      constructor() {
+        this.name = "Himmlish"
+        this.translater = {};
+        this.parser = {};
+
+        this.define('J', "Am");
+        this.define('H', "odem");
+        this.define('W', "embrace");
+
+        this.define('j', "am");
+        this.define('h', "spirit");
+        this.define('w', "together");
+
+        this.define('u', "your");
+        this.define('n', "way_to");
+        this.define('i', "the_powerful");
+        this.define('t', "end");
+
+        this.define('a', "one");
+        this.define('b', "house");
+        this.define('c', "sourrounded");
+        this.define('d', "fish");
+        this.define('e', "armee");
+        //this.define('f', "");
+        this.define('g', "camel");
+        this.define('k', "{");
+        this.define('l', "bread");
+        this.define('m', "see");
+        this.define('o', "last_eye");
+        this.define('p', "person");
+        this.define('q', "opposite");
+        this.define('r', "ruler");
+        this.define('s', "snake");
+        //this.define('v', "");
+        this.define('x', "}");
+        this.define('y', "decision");
+        this.define('z', "back");
+
+
+      }
+
+      define(word, translation) {
+        this.translate[word] = translation;
+        this.parser[translation] = word;
+      }
+
+      getWords(input) {
+        let words = [...input]
+        return words;
+      }
+
+      translate(input) {
+        let output = [];
+
+
+        for (let word of this.getWords(input)) {
+          this.translate[word] && output.push(this.translate[word])
+        }
+
+        return output.join(theWord.space)
+      }
+
+      parse(input) {
+        let output = [];
+        let words = input.split(theWord.space);
+
+        for (let word of words) {
+          this.parser[word] && output.push(this.parser[word])
+        }
+
+        return output.join('');
+      }
+    }
+
+    class Unit {
+
+    }
+
+    class VC {
+      static start() {
+        if (!this.singleton) {
+          this.singleton = new this();
+        }
+        return this.singleton;
+      }
+
+      constructor() {
+        this.language = new Language();
+        this.textareas = document.querySelectorAll("textarea");
+        this.classInput.value = theWord.light; // Word.singleton.genesis;
+        }
+
+      get input() { return this.textareas[0]; }
+      get modelOutput() { return this.textareas[1]; }
+      get parseOutput() { return this.textareas[2]; }
+      get classInput() { return this.textareas[3]; }
+
+
+      onKeyup(event) {
+
+        switch (event.srcElement) {
+          case (this.input):
+            this.modelOutput.value = this.language.translate(this.input.value);
+            this.parseOutput.value = this.language.parse(this.modelOutput.value);
+          case (this.modelOutput):
+            this.parseOutput.value = this.language.parse(this.modelOutput.value);
+            break;
+
+        }
+        console.log(this, event);
+      }
+
+    }
+  </script>
+</head>
+
+<body onload="JHWH.bringForth()">
+  <H1>Meta Character Input</H1>
+  <textarea rows="10" onkeyup="vc.onKeyup(event)"></textarea>
+  <H1>Meta Model Output</H1>
+  <textarea rows="10" onkeyup="vc.onKeyup(event)"></textarea>
+  <H1>Parse Meta Model</H1>
+  <textarea rows="10" onkeyup="vc.onKeyup(event)"></textarea>
+  <H1>Class Input</H1>
+  <textarea rows="10" onkeyup="vc.onKeyup(event)"></textarea>
+</body>
+
+</html>
